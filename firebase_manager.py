@@ -2,12 +2,19 @@ import firebase_admin
 from firebase_admin import credentials, firestore, auth
 from datetime import datetime
 import os
+import json
 
 class FirebaseManager:
     def __init__(self):
-        # Initialize Firebase
         try:
-            cred = credentials.Certificate('firebase-credentials.json')
+            # Check if running on cloud (Render.com)
+            if os.getenv('FIREBASE_CREDENTIALS'):
+                firebase_creds = json.loads(os.getenv('FIREBASE_CREDENTIALS'))
+                cred = credentials.Certificate(firebase_creds)
+            else:
+                # Local development
+                cred = credentials.Certificate('firebase-credentials.json')
+            
             firebase_admin.initialize_app(cred)
             self.db = firestore.client()
             print("✅ Firebase initialized successfully!")
@@ -20,7 +27,7 @@ class FirebaseManager:
         try:
             self.db.collection('users').document(user_id).collection('chats').add({
                 'message': message,
-                'sender': sender,  # 'user' or 'ai'
+                'sender': sender,
                 'timestamp': firestore.SERVER_TIMESTAMP,
                 'ai_gender': ai_gender
             })
@@ -47,7 +54,7 @@ class FirebaseManager:
                     "content": data['message']
                 })
             
-            return list(reversed(chat_history))  # Oldest first
+            return list(reversed(chat_history))
         except Exception as e:
             print(f"Error getting chat history: {e}")
             return []
@@ -90,7 +97,7 @@ class FirebaseManager:
             return False
     
     def get_inactive_users(self, hours=3):
-        """Get users inactive for X hours (for proactive messaging)"""
+        """Get users inactive for X hours"""
         try:
             from datetime import datetime, timedelta
             cutoff_time = datetime.now() - timedelta(hours=hours)
