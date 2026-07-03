@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "emotion": ["sad", "depression", "hopeless", "failure"],
+    "shloka_sanskrit": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।",
+    "shloka_english": "Karmanye Vadhikaraste Ma Phaleshu Kadachana",
+    "meaning_hinglish": "Tere paas sirf mehnat karne ka haq hai, result pe nahi. Bas apna kaam kar, result ka tension mat le. Jo hoga dekha jayega.",
+    "modern_advice": "Dekh yaar, tu bas apna 100% de. Result tera control mein nahi hai. Tension lene se kuch nahi hoga. Chill kar aur mehnat kar."
+  },
+  {
+    "id": 2,
+    "emotion": ["anger", "frustration", "irritated"],
+    "shloka_sanskrit": "क्रोधाद्भवति संमोहः संमोहात्स्मृतिविभ्रमः।",
+    "shloka_english": "Krodhad Bhavati Sammohah",
+    "meaning_hinglish": "Gussa tera dimag kharab kar deta hai. Gusse mein tu galat decision le leta hai. Phir pachtana padta hai.",
+    "modern_advice": "Bro/Babe, gussa aa raha hai samajh sakta/sakti hu. Par gusse mein kuch mat kar. Thoda time le, shaant ho ja, phir soch."
+  },
+  {
+    "id": 3,
+    "emotion": ["confused", "doubt", "uncertain", "lost"],
+    "shloka_sanskrit": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।",
+    "shloka_english": "Yada Yada Hi Dharmasya Glanirbhavati Bharata",
+    "meaning_hinglish": "Jab jab burai badhti hai, sahi raasta nahi dikhta, tab tab koi na koi raasta zaroor milta hai. Bas dhairya rakh.",
+    "modern_advice": "Confused hai? Normal hai yaar. Life mein aise phases aate hain. Bas ek ek step le, sab clear ho jayega. I'm here for you."
+  },
+  {
+    "id": 4,
+    "emotion": ["anxiety", "worry", "tension", "stress"],
+    "shloka_sanskrit": "समदुःखसुखः स्वस्थः समलोष्टाश्मकाञ्चनः।",
+    "shloka_english": "Sama Dukha Sukha Swastha",
+    "meaning_hinglish": "Dukh ho ya sukh, dono ko equally le. Balance rakh. Zyada khush mat ho, zyada dukhi bhi mat ho.",
+    "modern_advice": "Tension mat le itna. Life ups and downs lati rehti hai. Ye phase bhi chala jayega. Just breathe and take one day at a time."
+  },
+  {
+    "id": 5,
+    "emotion": ["heartbreak", "betrayal", "cheated", "lonely"],
+    "shloka_sanskrit": "नैनं छिन्दन्ति शस्त्राणि नैनं दहति पावकः।",
+    "shloka_english": "Nainam Chhindanti Shastrani",
+    "meaning_hinglish": "Teri aatma ko koi tod nahi sakta. Tu strong hai andar se. Bahar se chot lagi hai, but tu टूटा/टूटी nahi hai.",
+    "modern_advice": "I know hurt ho raha hai. Par trust me, tu strong hai. Jo hua move on kar. Better things coming for you. Main hoon na tere saath."
+  }
+]
