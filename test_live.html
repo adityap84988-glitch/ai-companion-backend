@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Companion Test</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 50px auto; padding: 20px; }
+        input, button { padding: 10px; margin: 5px 0; width: 100%; }
+        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+        #response { background: #f0f0f0; padding: 15px; margin-top: 20px; border-radius: 8px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>🤖 AI Companion Test</h1>
+    <input type="text" id="url" placeholder="https://your-app.onrender.com" value="">
+    <input type="text" id="message" placeholder="Type your message..." value="Hey! Kaise ho?">
+    <button onclick="sendMessage()">Send Message 🚀</button>
+    <div id="response">Response will appear here...</div>
+
+    <script>
+        async function sendMessage() {
+            const baseUrl = document.getElementById('url').value.trim();
+            const message = document.getElementById('message').value;
+            const responseDiv = document.getElementById('response');
+            
+            if (!baseUrl) {
+                responseDiv.textContent = "❌ Please enter your Render URL first!";
+                return;
+            }
+
+            responseDiv.textContent = "⏳ Sending...";
+            
+            try {
+                const res = await fetch(baseUrl + "/chat", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        user_id: "test_user",
+                        user_message: message,
+                        user_gender: "male",
+                        user_name: "Test",
+                        ai_gender: "female",
+                        mood_state: "normal"
+                    })
+                });
+                const data = await res.json();
+                responseDiv.textContent = "✅ Response:\n\n" + JSON.stringify(data, null, 2);
+            } catch (err) {
+                responseDiv.textContent = "❌ Error: " + err.message;
+            }
+        }
+    </script>
+</body>
+</html>
